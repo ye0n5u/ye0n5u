@@ -1,63 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" width="800" height="160">
   <defs>
     <style>
-      @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-      }
-      @keyframes scan {
-        0% { transform: translateX(-800px); }
-        100% { transform: translateX(800px); }
-      }
+      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+      @keyframes scan { 0%{transform:translateX(-820px)} 100%{transform:translateX(820px)} }
+      @keyframes spin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
       .cursor { animation: blink 1s step-end infinite; }
       .scanline { animation: scan 3s linear infinite; }
+      .reel { animation: spin 3s linear infinite; }
+      .reel2 { animation: spin 3s linear infinite reverse; }
     </style>
-    <clipPath id="clip">
-      <rect width="800" height="160" rx="4"/>
-    </clipPath>
-    <!-- scanline gradient -->
-    <linearGradient id="scanGrad" x1="0" y1="0" x2="1" y2="0">
+    <clipPath id="clip2"><rect width="800" height="160" rx="4"/></clipPath>
+    <linearGradient id="sg" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#e3ecff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#e3ecff" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#e3ecff" stop-opacity="0.6"/>
       <stop offset="100%" stop-color="#e3ecff" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
-  <!-- background -->
   <rect width="800" height="160" rx="4" fill="#0a0e1a"/>
-
-  <!-- border -->
   <rect x="1" y="1" width="798" height="158" rx="3" fill="none" stroke="#e3ecff" stroke-width="2"/>
-  <!-- inner border subtle -->
   <rect x="5" y="5" width="790" height="150" rx="2" fill="none" stroke="#1e2e50" stroke-width="0.5"/>
 
-  <!-- corner decorations -->
-  <!-- TL -->
-  <text x="12" y="20" font-family="'Courier New', monospace" font-size="9" fill="#3a5a9a">▸ v2.0</text>
-  <!-- TR -->
-  <text x="680" y="20" font-family="'Courier New', monospace" font-size="9" fill="#7a9ee8">[ ONLINE ]</text>
-  <!-- BL -->
-  <text x="12" y="150" font-family="'Courier New', monospace" font-size="9" fill="#3a5a9a">© 2025</text>
-  <!-- BR -->
-  <text x="764" y="150" font-family="'Courier New', monospace" font-size="9" fill="#3a5a9a">KR</text>
+  <text x="12" y="20" font-family="'Courier New',monospace" font-size="9" fill="#3a5a9a">▸ v2.0</text>
+  <text x="680" y="20" font-family="'Courier New',monospace" font-size="9" fill="#7a9ee8">[ ONLINE ]</text>
+  <text x="12" y="150" font-family="'Courier New',monospace" font-size="9" fill="#3a5a9a">© 2026</text>
 
-  <!-- dot row top -->
-  <text x="400" y="30" font-family="'Courier New', monospace" font-size="9" fill="#1e2e50" text-anchor="middle" letter-spacing="4">· · · · · · · · · · · · · · · · · · · · · · · · · · · · ·</text>
+  <text x="400" y="30" font-family="'Courier New',monospace" font-size="9" fill="#1e2e50" text-anchor="middle" letter-spacing="4">· · · · · · · · · · · · · · · · · · · · · · · · · · · · ·</text>
 
-  <!-- main name -->
-  <text x="400" y="88" font-family="'Courier New', monospace" font-size="34" font-weight="700" fill="#e3ecff" text-anchor="middle" letter-spacing="8">LEE YEONSU</text>
+  <rect x="365" y="38" width="70" height="44" rx="2" fill="none" stroke="#e3ecff" stroke-width="1.2"/>
+  <line x1="365" y1="44" x2="371" y2="38" stroke="#e3ecff" stroke-width="1.2"/>
+  <line x1="429" y1="38" x2="435" y2="44" stroke="#e3ecff" stroke-width="1.2"/>
+  <rect x="372" y="46" width="56" height="22" rx="1.5" fill="#0a0e1a" stroke="#4a6aaa" stroke-width="0.8"/>
+  <circle cx="385" cy="57" r="6.5" fill="none" stroke="#4a6aaa" stroke-width="0.8"/>
+  <circle cx="385" cy="57" r="2" fill="#4a6aaa"/>
+  <g class="reel" style="transform-origin:385px 57px">
+    <line x1="385" y1="50.5" x2="385" y2="52.5" stroke="#7a9ee8" stroke-width="1"/>
+    <line x1="385" y1="61.5" x2="385" y2="63.5" stroke="#7a9ee8" stroke-width="1"/>
+    <line x1="378.5" y1="57" x2="380.5" y2="57" stroke="#7a9ee8" stroke-width="1"/>
+    <line x1="389.5" y1="57" x2="391.5" y2="57" stroke="#7a9ee8" stroke-width="1"/>
+  </g>
+  <circle cx="415" cy="57" r="6.5" fill="none" stroke="#4a6aaa" stroke-width="0.8"/>
+  <circle cx="415" cy="57" r="2" fill="#4a6aaa"/>
+  <g class="reel2" style="transform-origin:415px 57px">
+    <line x1="415" y1="50.5" x2="415" y2="52.5" stroke="#7a9ee8" stroke-width="1"/>
+    <line x1="415" y1="61.5" x2="415" y2="63.5" stroke="#7a9ee8" stroke-width="1"/>
+    <line x1="408.5" y1="57" x2="410.5" y2="57" stroke="#7a9ee8" stroke-width="1"/>
+    <line x1="419.5" y1="57" x2="421.5" y2="57" stroke="#7a9ee8" stroke-width="1"/>
+  </g>
+  <path d="M379 68 Q400 72 421 68" fill="none" stroke="#2a4070" stroke-width="0.7"/>
+  <rect x="372" y="74" width="5" height="4" rx="0.5" fill="#1e2e50"/>
+  <rect x="423" y="74" width="5" height="4" rx="0.5" fill="#1e2e50"/>
 
-  <!-- cursor after name -->
-  <rect x="625" y="60" width="16" height="30" fill="#e3ecff" class="cursor"/>
+  <text x="400" y="108" font-family="'Courier New',monospace" font-size="30" font-weight="700" fill="#e3ecff" text-anchor="middle" letter-spacing="6">LEE YEONSU</text>
+  <rect x="619" y="82" width="14" height="26" fill="#e3ecff" class="cursor"/>
 
-  <!-- subtitle -->
-  <text x="400" y="114" font-family="'Courier New', monospace" font-size="11" fill="#7a9ee8" text-anchor="middle" letter-spacing="4">// 402 Payment Required · South Korea</text>
+  <text x="400" y="128" font-family="'Courier New',monospace" font-size="11" fill="#7a9ee8" text-anchor="middle" letter-spacing="3">// 402 Payment Required · South Korea</text>
 
-  <!-- dot row bottom -->
-  <text x="400" y="136" font-family="'Courier New', monospace" font-size="9" fill="#1e2e50" text-anchor="middle" letter-spacing="4">· · · · · · · · · · · · · · · · · · · · · · · · · · · · ·</text>
+  <text x="400" y="152" font-family="'Courier New',monospace" font-size="9" fill="#1e2e50" text-anchor="middle" letter-spacing="4">· · · · · · · · · · · · · · · · · · · · · · · · · · · · ·</text>
 
-  <!-- scanline animation -->
-  <g clip-path="url(#clip)">
-    <rect x="-800" y="0" width="800" height="2" fill="url(#scanGrad)" class="scanline"/>
+  <g clip-path="url(#clip2)">
+    <rect x="-820" y="0" width="820" height="2" fill="url(#sg)" class="scanline"/>
   </g>
 </svg>
